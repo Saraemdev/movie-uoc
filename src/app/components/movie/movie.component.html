@@ -1,0 +1,103 @@
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+<div
+  *ngIf="movie"
+  [style.background-image]="
+    'linear-gradient(rgba(69,39,160,0.7), rgba(0,0,0,0.9)), url(' +
+    imgUrl +
+    imgSizeBG +
+    movie.backdrop_path +
+    ')'
+  "
+  class="movie-bg"
+>
+  <div fxLayout="row wrap" fxLayout.xs="column" class="main-content">
+    <div
+      fxFlex="25%"
+      fxFlex.xs="100%"
+      fxLayoutAlign="center"
+      class="content-img"
+    >
+      <img src="{{ imgUrl + imgSize + movie.poster_path }}" alt="" />
+    </div>
+
+    <div fxFlex="75%" fxFlex.xs="100%" class="content-data">
+      <div fxLayout="row wrap">
+        <div fxFlex="75%">
+          <h1 fxLayoutAlign="center">{{ movie.title }}</h1>
+          <h2 fxLayoutAlign="center">{{ movie.tagline }}</h2>
+        </div>
+        <div fxFlex="25%" fxLayoutAlign="center center">
+          <a routerLink="/" mat-raised-button class="back-button" color="accent"
+            >Volver <mat-icon>home</mat-icon>
+          </a>
+        </div>
+      </div>
+
+      <div fxLayout="row wrap">
+        <mat-accordion fxFlex="75%">
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title> Ficha técnica </mat-panel-title>
+            </mat-expansion-panel-header>
+            <ul>
+              <li>
+                <span class="content-title">Dirección: </span>
+                <span *ngFor="let dir of director">{{ dir.name }} | </span>
+              </li>
+              <li>
+                <span class="content-title">Nacionalidad: </span>
+                <span *ngFor="let country of countries"
+                  >{{ country.name }} |
+                </span>
+              </li>
+              <li>
+                <span class="content-title">Duración: </span>
+                {{ movie.runtime }} minutos
+              </li>
+            </ul>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title> Sinopsis </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>{{ movie.overview }}</p>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+
+      <div fxLayout="row wrap">
+        <mat-accordion fxFlex="90%">
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title> Reparto </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div fxLayout="row wrap">
+              <div
+                fxFlex="20%"
+                fxFlex.xs="50%"
+                *ngFor="let actor of cast | slice: 0:5"
+              >
+                <app-movie-cast-card [actor]="actor"></app-movie-cast-card>
+              </div>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="container">
+    <h2>Películas recomendadas</h2>
+    <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="center">
+      <div
+        fxFlex="15%"
+        style="margin: 2%"
+        *ngFor="let movie of recommendatedMovies | slice: 0:4"
+      >
+        <app-home-card [movie]="movie"></app-home-card>
+      </div>
+    </div>
+  </div>
+</div>

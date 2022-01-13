@@ -1,0 +1,29 @@
+mat-card {
+  margin: 5%;
+  width: 50%;
+  background-color: rgba($color: #673ab7, $alpha: 0.3);
+}
+
+img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px 5px 0 0;
+}
+
+mat-card-title,
+mat-card-subtitle {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.9rem;
+}
+
+mat-card-title {
+  color: #fff;
+  font-weight: bolder;
+}
+
+mat-card-subtitle {
+  font-size: 0.7rem;
+  color: #fff;
+}

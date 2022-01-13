@@ -1,0 +1,25 @@
+<div class="container">
+  <mat-tab-group
+    (selectedTabChange)="tabSwitch($event)"
+    [selectedIndex]="selectedTab"
+    dinamicHeight
+    mat-align-tabs="center"
+    animationDuration="2000ms"
+  >
+    <mat-tab *ngFor="let tab of tabList" [label]="tab">
+      <mat-spinner *ngIf="isLoading"></mat-spinner>
+      <swiper
+        [config]="config"
+        (swiper)="onSwiper($event)"
+        (slideChange)="onSlideChange()"
+        class="swiper"
+        fxLayout="row wrap"
+      >
+        <ng-template swiperSlide *ngFor="let movie of movieList">
+          <app-home-card [movie]="movie"></app-home-card>
+        </ng-template>
+        <div class="swiper-pagination"></div>
+      </swiper>
+    </mat-tab>
+  </mat-tab-group>
+</div>

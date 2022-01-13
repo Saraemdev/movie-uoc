@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>Todas las películas en cines actualmente</h1>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+</div>
+
+<div
+  class="container"
+  fxLayout="row wrap"
+  fxLayout.xs="column"
+  fxLayoutAlign="center center"
+>
+  <div fxFlex="33%" fxFlex.xs="100%" *ngFor="let movie of movieList">
+    <app-home-card [movie]="movie"></app-home-card>
+  </div>
+  <mat-paginator
+    (page)="handlePageEvent($event)"
+    [length]="moviePages"
+    [pageSize]="20"
+    [showFirstLastButtons]="true"
+    aria-label="Select page"
+  >
+  </mat-paginator>
+</div>

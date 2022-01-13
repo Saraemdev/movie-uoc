@@ -1,0 +1,43 @@
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+mat-card {
+  width: 100%;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px 5px 0 0;
+}
+
+mat-card-content {
+  padding: 10px;
+}
+
+mat-card-title,
+mat-card-subtitle {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1rem;
+}
+
+mat-card-subtitle {
+  font-size: 0.7rem;
+}
+
+p {
+  font-size: 0.8rem;
+}
+
+button {
+  position: absolute;
+  right: 11%;
+  top: 5%;
+  border: 2px solid #ffc107;
+}

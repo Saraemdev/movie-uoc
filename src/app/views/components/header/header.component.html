@@ -1,0 +1,64 @@
+<p>
+  <mat-toolbar
+    fxLayout="row wrap"
+    fxLayoutAlign="space-between"
+    color="primary"
+    class="mat-elevation-z6 navbar"
+  >
+    <div fxFlex.xs="50%" fxLayoutAlign="center center">
+      <a routerLink="/" class="mat-button" href="/">
+        <span class="mat-button-wrapper logo-wrapper">
+          <img src="../../../../assets/img/logo-app.png" alt="Movie-UOC logo" />
+          <span>Movie-UOC</span>
+        </span>
+      </a>
+    </div>
+    <div
+      navbar
+      fxShow.xs="false"
+      fxLayoutAlign="center center"
+      fxLayout="row wrap"
+      fxLayoutGap="40px"
+    >
+      <div class="menu">
+        <a routerLink="/movies" class="mat-button" href="/movies"
+          >Todas las películas</a
+        >
+      </div>
+      <div class="menu">
+        <a routerLink="/about" class="mat-button" href="/about"
+          >Sobre esta PWA</a
+        >
+      </div>
+    </div>
+    <div fxFlex.xs="50%" fxLayoutAlign="center center">
+      <a href="https://github.com/saraemdev/movie-uoc" class="mat-button">
+        <span class="mat-button-wrapper github-wrapper">
+          <img
+            src="../../../../assets/img/github-circle-white-transparent.svg"
+            alt="Github logo"
+          />
+          <span fxShow.xs="false">GitHub</span>
+        </span>
+      </a>
+    </div>
+  </mat-toolbar>
+  <mat-toolbar
+    navbar
+    fxShow="false"
+    fxShow.xs="true"
+    fxLayout="row wrap"
+    fxLayoutAlign="center center"
+    fxLayoutGap="20px"
+    color="primary"
+  >
+    <div>
+      <a routerLink="/movies" class="mat-button" href="/movies"
+        >Todas las películas</a
+      >
+    </div>
+    <div>
+      <a routerLink="/about" class="mat-button" href="/about">Sobre esta PWA</a>
+    </div>
+  </mat-toolbar>
+</p>

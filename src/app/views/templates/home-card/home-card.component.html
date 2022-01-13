@@ -1,0 +1,29 @@
+<a [href]="['/movie/' + movie.id]">
+  <mat-card class="mat-elevation-z4">
+    <img
+      *ngIf="movie.poster_path"
+      src="{{ imgUrl + imgSize + movie.poster_path }}"
+      alt="{{ movie.title }} poster"
+      class="img-card"
+    />
+    <img
+      *ngIf="!movie.poster_path"
+      src="../../../../assets/img/logo-app.png"
+      alt="sin poster de {{ movie.title }}"
+      class="img-card"
+    />
+    <mat-card-content>
+      <mat-card-title>{{ movie.title }}</mat-card-title>
+      <mat-card-subtitle>{{ movie.original_title }}</mat-card-subtitle>
+      <p *ngIf="movie.release_date">
+        Estreno: {{ movie.release_date | date: "dd/MM/yyyy" }}
+      </p>
+      <button fxShow="false" fxShow.xs="true" mat-mini-fab color="primary">
+        {{ movie.vote_average | number: "1.1-1" }}
+      </button>
+      <button fxShow.xs="false" mat-fab color="primary">
+        {{ movie.vote_average | number: "1.1-1" }}
+      </button>
+    </mat-card-content>
+  </mat-card></a
+>

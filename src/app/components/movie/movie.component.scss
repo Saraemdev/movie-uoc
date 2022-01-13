@@ -1,0 +1,50 @@
+.movie-bg {
+  background-repeat: no-repeat;
+  backface-visibility: hidden;
+  background-size: cover;
+
+  color: white;
+
+  margin-top: -0.9%;
+}
+
+.content-img,
+.content-data {
+  padding: 2%;
+}
+
+.content-img img {
+  height: 75%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.back-button {
+  color: #673ab7;
+}
+
+mat-accordion {
+  margin-left: 5%;
+}
+
+mat-expansion-panel {
+  background-color: rgba($color: #673ab7, $alpha: 0.3);
+  color: #fff;
+}
+
+mat-panel-title {
+  color: #fff;
+}
+
+li {
+  list-style: none;
+}
+
+.container h2 {
+  padding: 2% 10% 0;
+  color: #673ab7;
+}
+
+mat-spinner {
+  margin: 1% auto;
+}

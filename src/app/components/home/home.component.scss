@@ -1,0 +1,25 @@
+.container {
+  padding: 2% 10%;
+}
+
+::ng-deep .swiper-slide {
+  margin-top: 30px;
+}
+
+::ng-deep .swiper-pagination-bullets {
+  bottom: 0;
+}
+
+::ng-deep .swiper-pagination-bullet-active {
+  background-color: #673ab7;
+}
+
+::ng-deep .swiper-pagination {
+  bottom: 0;
+  position: initial;
+  margin-top: 20px;
+}
+
+mat-spinner {
+  margin: 1% auto;
+}
